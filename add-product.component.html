@@ -5,18 +5,18 @@
 
     <div class="form-group">
         <label >Name of the BOOK:</label>
-        <input type="text" class="form-control" id="Bookname">
+        <input type="text" class="form-control" [(ngModel)]="name" name="name">
     </div>
     <div class="form-group">
         <label>Amount:</label>
-        <input type="text" class="form-control" id="Amount">
+        <input type="text" class="form-control" [(ngModel)]="amount" name="amount">
     </div>
     <div class="form-group">
         <label>Book_ID:</label>
-        <input type="text" class="form-control" id="BookId">
+        <input type="text" class="form-control" [(ngModel)]="id" name="id">
     </div>
 
-    <a routerLink="Home"><button type="submit" class="btn btn-success">Submit</button></a>
+    <a routerLink="Home"><button type="submit"  class="btn btn-success" (click)="add()" >Submit</button></a>
     
 </form>
 

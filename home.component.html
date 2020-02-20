@@ -11,30 +11,13 @@
 </thead>
 <tbody>
 <tr>
-<td>Harry Potter</td>
-<td>5</td>
-<td>HP1212</td>
-<a href="EditProduct"><button type="submit" class="btn btn-warning">Edit</button></a>
+<td>{{book.name}}</td>
+<td>{{book.amount}}</td>
+<td>{{book.id}}</td>
+<a routerLink="EditProduct"><button type="submit" class="btn btn-warning" (click)="edit()">Edit</button></a>
 
-<a href="Home"><button type="submit" class="btn btn-danger">Delete</button></a>
+<a routerLink="Home"><button type="submit" class="btn btn-danger" (click)="delete()">Delete</button></a>
 </tr>
-<tr>
-<td>The Secret</td>
-<td>12</td>
 
-
-<td>TS2312</td>
-<a href="EditProduct"><button type="submit" class="btn btn-warning">Edit</button></a>
-        
-<a href="Home"><button type="submit" class="btn btn-danger">Delete</button></a>
-</tr>
-<tr>
-<td>Romio & Juliot</td>
-<td>8</td>
-<td>RAJ232</td>
-<a href="EditProduct"><button type="submit" class="btn btn-warning">Edit</button></a>
-
-<a href="Home"><button type="submit" class="btn btn-danger">Delete</button></a>
-</tr>
 </tbody>
 </table>

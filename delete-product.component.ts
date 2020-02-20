@@ -5,25 +5,25 @@ import {FormsModule} from '@angular/forms';
 
 import {ProductService} from 'C:/Users/hari.dubey/Desktop/node_Projects/project2/src/app/product.service';
 @Component({
-  selector: 'app-edit-product',
-  templateUrl: './edit-product.component.html',
-  styleUrls: ['./edit-product.component.css']
+  selector: 'app-delete-product',
+  templateUrl: './delete-product.component.html',
+  styleUrls: ['./delete-product.component.css']
 })
+export class DeleteProductComponent implements OnInit {
 
-
-export class EditProductComponent implements OnInit {
   name=""
   amount=""
   id=""
 
-  books=[]
+  books=[];
 
   constructor(private productservice: ProductService) { }
+
   ngOnInit() {
   }
 
-  edit(){
-    this.productservice.editproduct(this.id,this.name,this.amount)
+  delete(){
+    this.productservice.deleteproduct(this.id,this.name,this.amount);
   }
 
 }
