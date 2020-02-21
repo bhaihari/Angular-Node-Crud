@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 
 import {FormsModule} from '@angular/forms';
-
+import {Observable} from 'rxjs';
 import {ProductService} from 'C:/Users/hari.dubey/Desktop/node_Projects/project2/src/app/product.service';
 import { Router } from "@angular/router";
 @Component({
@@ -29,7 +29,9 @@ id  =""
   }
 
   list(){
-    this.books=this.productservice.listproduct()
+    this.productservice.listproduct().subscribe((books)=>{
+      this.books=books;
+    })
   }
   delete(book){ 
     console.log(book.BookId)
