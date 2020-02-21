@@ -9,14 +9,14 @@
 <th>Action</th>
 </tr>
 </thead>
-<tbody>
+<tbody *ngFor="let book of books">
 <tr>
-<td>{{book.name}}</td>
-<td>{{book.amount}}</td>
-<td>{{book.id}}</td>
-<a routerLink="EditProduct"><button type="submit" class="btn btn-warning" (click)="edit()">Edit</button></a>
+<td>{{book.BookName}}</td>
+<td>{{book.Amount}}</td>
+<td>{{book.BookId}}</td>
+<button type="submit" class="btn btn-warning"  (click)="edit(book)">Edit</button>
 
-<a routerLink="Home"><button type="submit" class="btn btn-danger" (click)="delete()">Delete</button></a>
+<button type="submit" class="btn btn-danger" (click)="delete(book)">Delete</button>
 </tr>
 
 </tbody>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ProductService {
 
 
   }
-  url ="http://127.0.0.1"
+  url ="http://127.0.0.1:3000"
 
   public addproduct(id,name,amount){
     let data={
@@ -18,7 +19,15 @@ export class ProductService {
       name:name,
       amount:amount
     }
-    return this.http.post(this.url+'/Home',data);
+    console.log(data);
+        return this.http.post(this.url+'/Home',data).subscribe((result)=>{
+          console.log(result);
+        });
+    
+  }
+
+  public getProduct(id){
+    return this.http.get(this.url+'/Home/'+id);
   }
 
 
@@ -28,29 +37,33 @@ export class ProductService {
       name:name,
       amount:amount
     }
-    return this.http.put(this.url+'/Home',data);
+    return this.http.put(this.url+'/Home',data).subscribe((result)=>{
+      console.log(result);
+    });;
   }
 
 
-  public deleteproduct(id,name,amount){
-    let data={
-      id:id,
-      name:name,
-      amount:amount
-    }
-    return this.http.delete(this.url+'/Home:id',id);
+  public deleteproduct(BookId){
+
+    console.log(BookId);
+    return this.http.delete(this.url+'/Home/delete/'+BookId);
   }
 
-  public listproduct(id,name,amount){
-    let data={
-      id:id,
-      name:name,
-      amount:amount
-    }
-    return this.http.get(this.url+'/Home',id);
+  // public deleteproduct(BookId){
+  //   let data={
+  //     BookId:BookId
+      
+  //   }
+  //   console.log(data);
+  //   return this.http.delete(this.url+'/Home/'+BookId,BookId);
+  // }
+
+
+
+  public listproduct():Observable<any>{
+ 
+    return this.http.get(this.url+'/Home');
   }
-  
-  
   
 }
 

@@ -16,6 +16,8 @@ export class AddProductComponent implements OnInit {
   id=""
 
   books=[]
+
+  
 /*
   @Output() hari= new EventEmitter<{bookname:string,bookid:string,amount:string}>();
   addinfo(){
@@ -28,6 +30,7 @@ export class AddProductComponent implements OnInit {
   }
  
 add(){
+
   this.productservice.addproduct(this.id,this.name,this.amount);
  
 }

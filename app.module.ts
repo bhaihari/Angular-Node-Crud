@@ -16,7 +16,6 @@ import { EmailComponent } from './middle/email/email.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DeleteProductComponent } from './middle/delete-product/delete-product.component';
-import { ListProductComponent } from './middle/list-product/list-product.component';
 
 
 
@@ -30,13 +29,12 @@ import { ListProductComponent } from './middle/list-product/list-product.compone
     AddProductComponent,
     EditProductComponent,
     EmailComponent,
-    DeleteProductComponent,
-    ListProductComponent
+    DeleteProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

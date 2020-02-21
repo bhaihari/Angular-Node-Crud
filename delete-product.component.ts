@@ -22,8 +22,5 @@ export class DeleteProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  delete(){
-    this.productservice.deleteproduct(this.id,this.name,this.amount);
-  }
 
 }

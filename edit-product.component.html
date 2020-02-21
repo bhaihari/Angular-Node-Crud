@@ -13,11 +13,11 @@
       </div>
       <div class="form-group">
           <label>Amount:</label>
-          <input type="text" class="form-control" id="Amount" [(ngModel)]="amount" name="amount">
+          <input type="number" class="form-control" id="Amount" [(ngModel)]="amount" name="amount">
       </div>
       <div class="form-group">
           <label>Book_ID:</label>
-          <input type="text" class="form-control" id="BookId" [(ngModel)]="id" name="id">
+          <input type="number" class="form-control" id="BookId" disabled [(ngModel)]="id" name="id">
       </div>
   
       <a routerLink="Home"><button type="submit" class="btn btn-primary" (click)="edit()">Edit</button></a>
